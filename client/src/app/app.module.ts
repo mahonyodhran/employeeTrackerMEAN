@@ -8,9 +8,10 @@ import { EmployeeFormComponent } from './employee-form/employee-form.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
+import { EditEmployeeComponent } from './edit-employee/edit-employee.component';
 
 @NgModule({
-  declarations: [AppComponent, EmployeesListComponent, EmployeeFormComponent, AddEmployeeComponent],
+  declarations: [AppComponent, EmployeesListComponent, EmployeeFormComponent, AddEmployeeComponent, EditEmployeeComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
