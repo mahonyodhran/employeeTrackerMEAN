@@ -29,3 +29,19 @@ employeeRouter.get('/:id', async (req, res) => {
     res.status(404).send(`Failed to find an employee: ID ${req?.params?.id}`);
   }
 });
+
+employeeRouter.post('/', async (req, res) => {
+  try {
+    const employee = req.body;
+    const result = await collections.employees.insertOne(employee);
+
+    if (result.acknowledged) {
+      res.status(201).send(`Created a new employee: ID ${result.insertedId}.`);
+    } else {
+      res.status(500).send('Failed to create a new employee.');
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(400).send(error.message);
+  }
+});
